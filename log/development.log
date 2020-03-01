@@ -1,0 +1,2198 @@
+  [1m[35m (19.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT GET_LOCK('3434676917533509270', 0)[0m
+  [1m[35m (21.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreatePeople (20200226224620)
+  [1m[35m (94.6ms)[0m  [1m[35mCREATE TABLE `people` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `reference` varchar(255), `email` varchar(255), `home_phone_number` varchar(255), `mobile_phone_number` varchar(255), `firstname` varchar(255), `lastname` varchar(255), `address` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200226224620')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBuildings (20200226224628)
+  [1m[35m (86.5ms)[0m  [1m[35mCREATE TABLE `buildings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `reference` varchar(255), `address` varchar(255), `zip_code` varchar(255), `city` varchar(255), `country` varchar(255), `manager_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200226224628')[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('3434676917533509270')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2020-02-26 23:47:46 +0100
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tanime/.rvm/gems/ruby-2.6.3/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tanime/.rvm/gems/ruby-2.6.3/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (13.1ms)
+Completed 200 OK in 79ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-26 23:53:02 +0100
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 2115ms (Views: 2112.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-26 23:59:22 +0100
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 265ms (Views: 254.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-26 23:59:55 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/create"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/create" for ::1 at 2020-02-27 00:02:23 +0100
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6PhXqZbD8fr7r15SzP8u8OR1rjN+CZ78wodetiHZw8invlla9t2MdKhYa6ihUZR6gY8Y4Ux0lSgO52Nrykl5XQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007fad9058b138 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-4835-1ntcwby.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Redirected to http://localhost:3000/person/new
+Fin
+Completed 200 OK in 34ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:02:24 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 177ms (Views: 175.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:04:40 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KnlCRfYtafJpdqGeacoZR65f+xa/7BtG43QNjAwGdRH3y+4rZu3awogc5K5OCDwTb7c9N2aA7c/7a/nXGGu2kg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007fad90da13b8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-4835-106wr6p.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Redirected to http://localhost:3000/person/new
+Fin
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:04:40 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 83ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:06:08 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:06:15 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6m44Q1XAhhG7bWtvxsJywPYWBfpm5RJc3itchLTcyh2lKDawNd77n+iaXpWrbMhKk+yzKFSYGYgSS2FZX0xwiA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007fad91170db8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-4835-1hq72qj.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Redirected to http://localhost:3000/person/new
+Fin
+Completed 200 OK in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:06:15 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:07:37 +0100
+  [1m[35m (3.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 338ms (Views: 333.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:07:52 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ok7wfKdRGcXI3DHlrNZ2u0NqfeExz4yJ1+An8ZT0llV1CP6Px09kS5srBB/BeMwxJpDLMwOyh10bgBosf2QswA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f0470070c08 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-1jfx149.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Redirected to http://localhost:3000/person/new
+Fin
+Completed 200 OK in 63ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:07:52 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:08:24 +0100
+  [1m[35m (3.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VQkK/cP1WwO1pKlzfKcKyDe8qMhYJssWCBfmOEBTpaiIu6aTUzXoM1TO7ENbZS+c9lRu6YFKPZ8QCBJjVD5mKw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f0479a29188 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-hqdfpl.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (can't convert ActionDispatch::Http::UploadedFile to IO (ActionDispatch::Http::UploadedFile#to_io gives Tempfile)):
+  
+app/controllers/person_controller.rb:22:in `exists?'
+app/controllers/person_controller.rb:22:in `create'
+Started GET "/person/new" for ::1 at 2020-02-27 00:09:08 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 66ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:09:13 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsbTPyglVhpEoRwQ0TTAf9boWtibo+/H1MT6ZpFzJN4xgN3MSDsrlBdWKeq8mnr1sxLsCqne5BMYpMe7euOeSw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f04790f3690 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-2mcq0e.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of ActionDispatch::Http::UploadedFile into String):
+  
+app/controllers/person_controller.rb:25:in `create'
+Started POST "/create" for ::1 at 2020-02-27 00:10:05 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsbTPyglVhpEoRwQ0TTAf9boWtibo+/H1MT6ZpFzJN4xgN3MSDsrlBdWKeq8mnr1sxLsCqne5BMYpMe7euOeSw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f0470093b40 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-15ns0p1.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `import' for #<Class:0x00007f04700be070>):
+  
+app/controllers/person_controller.rb:28:in `create'
+Started POST "/create" for ::1 at 2020-02-27 00:10:37 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fsbTPyglVhpEoRwQ0TTAf9boWtibo+/H1MT6ZpFzJN4xgN3MSDsrlBdWKeq8mnr1sxLsCqne5BMYpMe7euOeSw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f0470822f78 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-1cv8dag.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `import' for #<Class:0x00007f0470836fc8>):
+  
+app/controllers/person_controller.rb:29:in `create'
+Started GET "/person/new" for ::1 at 2020-02-27 00:11:56 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:12:02 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"98nHYp7ikLSaNN+MQ14DsGjQlK2+BlTloi5Lk3KxHZO4j8mR/vztOsnD6nYu8Lk6DSoif4x7XzFuTnZOmSGnBg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f0470c53840 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-1x7qshp.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Debut
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (22.9ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-26 23:12:02', '2020-02-26 23:12:02')[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-26 23:12:02', '2020-02-26 23:12:02')[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+Fin
+Completed 200 OK in 254ms (ActiveRecord: 221.1ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:12:02 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:15:09 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:15:16 +0100
+Processing by PersonController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s52MDVScN7UPKY6EJxTMCEQy5ifkbLWpOCcg5tVU5vT824L+NIJKO1zeu35KunaCIchQ9dYRvn30Rx07PsRcYQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f04795156b0 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-ug2t7j.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-26 23:15:16', '2020-02-26 23:15:16')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-26 23:15:16', '2020-02-26 23:15:16')[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End
+Completed 200 OK in 71ms (ActiveRecord: 28.7ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:15:16 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:18:28 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 88ms (Views: 86.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:18:34 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wj5uA/LgktM4yuFTbdw0ZG5Vn2fdP2MEHIdgPoEBLicVeGDwkv7vXWs91KkAco7uC68pte9CaNDQ513japGUsg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f047c251660 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-5191-6mdc2a.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.6ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:18:34', '2020-02-26 23:18:34')[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:18:34', '2020-02-26 23:18:34')[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 114ms (ActiveRecord: 88.3ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:18:34 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:26:28 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:26:46 +0100
+  [1m[35m (3.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G93a3sbSACS6V2P75rDLjrqq8GfxOmWDhz4g0id8VNdUm9Qtpsx9qumgVgGLHnEE31BGtcNHbldLXh0PzOzuQg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc786df0c8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-6712-1ay83ja.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 22ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:26:47 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 197ms (Views: 195.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:28:03 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19BthskAIk1BdKCVu4RWmSyEhjzCB4/ELnu/rVuqmdkKYsHoWcCRfaAe5aWcRnPN7WxAHRtreU02ZEv2T8daWg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc79476588 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-6712-3x7zvx.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 9ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:28:03 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:28:26 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:29:12 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r+zFNXG969fDfNIywS9BoFNPTVTgga1SM3LJRe37N+3gqsvGEaOWWZCL58isgfsqNrX7htL8pob/EvSYBmuNeA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc795cc310 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-6712-6nrql7.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 11ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:29:12 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:31:46 +0100
+  [1m[35m (5.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 262ms (Views: 256.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:31:53 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Rvp0dWGq5bXXN+Te8hKr5xE2cCEde11JKGOcV1H68maXecitZjWGISr6mkWZvAl+b5vErYI5qHowbOsttdRXA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f9184070d88 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-7098-6agw2s.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin : Building
+  [1m[35m (5.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:31:53', '2020-02-26 23:31:53')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.7ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:31:53', '2020-02-26 23:31:53')[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 147ms (ActiveRecord: 77.2ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:31:53 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:33:44 +0100
+  [1m[35m (4.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 201ms (Views: 197.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:33:51 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uOALmoRwxTdSduvErrTdICYNw3gz7GBF0HawwPl+bI73pgVp5G64uQGB3j7DGmeqQ/d1qgGRa5EcFo0dEu7WGw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f9bc4070410 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-7201-z1xp2c.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin : Building
+  [1m[35m (4.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:33:51', '2020-02-26 23:33:51')[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:33:51', '2020-02-26 23:33:51')[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 134ms (ActiveRecord: 66.7ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:33:51 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:33:55 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:34:10 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pnaWlhwFVaBi98H4+0nRpOEvS8pDuR0Hmyc4CH7JN+TpMJhlfBsoLjEA9AKW52suhNX9GHHEFtNXRwXVlVmNcQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f9bd1706678 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-7201-qyhtfr.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin : Building
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:34:10 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:35:56 +0100
+  [1m[35m (6.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 301ms (Views: 295.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:36:20 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:36:22 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 131ms (Views: 126.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:36:30 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W2bGZaiWZrzzcMlOIlG2iIV5bDl0Zm4RgdK/WmLl0TAUIMiWyIgbMqCH/LRP/wwC4IPa60YbZcVNsoKHiXVrpQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007faaa4d54cc8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-7359-kawoht.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin : Building
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 72ms (ActiveRecord: 44.6ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:36:30 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:36:48 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:38:25 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 64ms (Views: 61.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:39:35 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:39:54 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o+EEvKZjKI50dQnBkJIoqIRJkHq1+sRjRxAkm1ZaegHspwpPxn1VACeCPDv9PJIi4bMmqIeHz7eLcBlGvcrAlA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007faaa5cdf878 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-7359-gma9q3.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin : Building
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 75ms (ActiveRecord: 50.2ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:39:54 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 65ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:40:59 +0100
+  [1m[35m (6.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 211ms (Views: 206.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 00:41:10 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCR4jimf2I8R7Rigj98DIaKYNKs52yJv+51lVv6AfdAfYnZ9SYGlAUIaLVricbmrx2KCeQumKbs3/ViLFRDHRQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1f9c070040 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-7621-r2uqfu.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[35m (4.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-26 23:41:10', '2020-02-26 23:41:10')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-26 23:41:10', '2020-02-26 23:41:10')[0m
+  [1m[35m (25.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+Completed 200 OK in 159ms (ActiveRecord: 71.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:41:10 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:41:18 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-27 00:41:24 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HCoJOIzrwJPhaqcxBxoIlG0ewDMshCKWFV1pJ0/XvhFTbAfL7PW9HbKdkstqtLIeCOR24R75KULZPVT6pEcEhA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1fa57261d8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-7621-7068vo.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin : Building
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:41:24', '2020-02-26 23:41:24')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:41:24', '2020-02-26 23:41:24')[0m
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 107ms (ActiveRecord: 86.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:41:24 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:43:26 +0100
+Started GET "/building/new" for ::1 at 2020-02-27 00:43:36 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:44:16 +0100
+  [1m[35m (5.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 189ms (Views: 185.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 00:44:22 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bHa/yX42uNfwgkn1oik8IBGEfVybLyxgN/a07WP0Z/IjMLE6HijFWaN1fA/Ph4aqdH7LjqlSJ7T7lokwiGTdZw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f4c04070010 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8026-1tpgz2g.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[35m (3.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-26 23:44:22', '2020-02-26 23:44:22')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-26 23:44:22', '2020-02-26 23:44:22')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+Completed 200 OK in 134ms (ActiveRecord: 66.7ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:44:22 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:44:25 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 00:44:31 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bn8zpcNNWn6AETCjcIOyIhsABGO3IDIOa3cUX5vS6FxJOT1Wo1Mn8NPmBVkdLQiofvqysYVdOdqnFymCcEJSyQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f4c0d72d4a8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8026-1mwgemq.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+  Rendering building/create.html.erb within layouts/application
+  Rendered building/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 00:44:43 +0100
+Processing by BuildingController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bn8zpcNNWn6AETCjcIOyIhsABGO3IDIOa3cUX5vS6FxJOT1Wo1Mn8NPmBVkdLQiofvqysYVdOdqnFymCcEJSyQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f4c0d9f7c88 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8026-1pw5yix.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+  Rendering building/create.html.erb within layouts/application
+  Rendered building/create.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:45:35 +0100
+  [1m[35m (5.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 248ms (Views: 240.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 00:45:43 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"voNawbmCM0FBgrlym+CCOeJqbCvUIzSxeP/IbhEGMyXxxVQy2ZxOzxJ1jIj2Tjizh5Da+eZeP2W0n/Wz+paJsA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b30070588 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-17u99ax.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[35m (3.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-26 23:45:43', '2020-02-26 23:45:43')[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-26 23:45:43', '2020-02-26 23:45:43')[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+Completed 200 OK in 172ms (ActiveRecord: 75.1ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 00:45:43 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:45:55 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 00:46:05 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gkZanlFXzIwg8vUhCb5o5OAhniAmm2Y3n71eLXcdZgfNAFRtMUmxAnMFwNtkENJuhdso8hTmbeNT3WPwnI3ckg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b39725488 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-1cwbhmf.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Begin : Building
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:46:05', '2020-02-26 23:46:05')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-26 23:46:05', '2020-02-26 23:46:05')[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End
+Completed 200 OK in 99ms (ActiveRecord: 83.4ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 00:46:05 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:22:15 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R+BXl5v3BEGYDuTE10994OuVNv8bywBibCqqUHmsmCuCq6jBOn4UznDBi0VDveNgrrRMkOeTT2gk+wplQpgIWw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b39b47340 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-1svsmug.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-27 00:22:15', '2020-02-27 00:22:15')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-27 00:22:15', '2020-02-27 00:22:15')[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 103ms (ActiveRecord: 77.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:22:15 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 125ms (Views: 122.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:24:42 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:24:47 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0fcJg5VP/tw9i19JSr5ZdnNQEVn0EnZ1hZSF9jc4DKwAdLVbktCdSMBGIdIhEPvvDf2l1WtQg0adm/KM0xapw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b390d3440 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-1lbnx1u.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (3.9ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 37ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:24:47 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:25:23 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C2hP0Ai4bnCo3Cv2KELSzgFqpVcKU9XHNO+06LzMwo7OI7CGqTF+/0ATRHe8sExOREvfOPYLms18PhTdh/hS/g==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b39781cb0 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-1axla08.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (3.2ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 9ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:25:23 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:26:26 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"agz8egY5TRmsbgrvR2gG5JxwMWp256ywoaKuXzkWKhqvRwMsp7BdlkShZW7Tmphk2VFLBYq/47rpcw5qAiK6ag==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b39ce7678 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-jqx386.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (1.2ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-27 00:26:26', '2020-02-27 00:26:26')[0m
+  [1m[35m (23.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (2.7ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-27 00:26:26', '2020-02-27 00:26:26')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 79ms (ActiveRecord: 31.5ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:26:26 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:26:53 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nq21xh8hRl5BOWtqZGFC/hJ3nABNs8v73SR7ucBGIT7z5kqQvqhW0an2BOvwk9x+V1bmb7HrhPGV9duM+3KxTg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b39a36118 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-ircgmn.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (3.2ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[33mUPDATE `people` SET `firstname` = 'Henriy', `updated_at` = '2020-02-27 00:26:53' WHERE `people`.`id` = 1[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 86ms (ActiveRecord: 12.7ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:26:53 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:30:59 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6F3PqI+3EMoVOnrhKfk6vKSrNJCaSdzJ5ZlW/9SI0hMtFjD+Lj4ARf31FWC9C6Q84YpO/2YRk8OtSPbK77xCYw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b3407cbb8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-ornhvb.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '3'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('3', 'jdurand@gmail.com', '0123336789', '0663456789', 'Adama', 'THIAM', '20 Avenue Lanterne', '2020-02-27 00:30:59', '2020-02-27 00:30:59')[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 87ms (ActiveRecord: 60.6ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:30:59 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:32:27 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e7ij6suxKPUr7BbzPhN3+YMC8bmb3RwvITJ0Q9BEjbe+81y8ajg4esMjeXKq4el5xiOL1meFUyVp49R263Adxw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b480befe0 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-iqlvsc.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (2.3ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE `people` SET `firstname` = 'Henri', `updated_at` = '2020-02-27 00:32:27' WHERE `people`.`id` = 1[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (1.4ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '3'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `people` SET `firstname` = 'John', `lastname` = 'Smith', `home_phone_number` = '331234567', `mobile_phone_number` = '22123456', `email` = 'jsmith@gmail.com', `address` = '20 John Smith', `updated_at` = '2020-02-27 00:32:27' WHERE `people`.`id` = 3[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 49ms (ActiveRecord: 25.5ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:32:27 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 77ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:33:03 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Pz6IfKBkXPRfsWuotBPBvveWDc082u8wOFEM54z+y89twV3UwiB/Dmxqi82ItGGvv8iWMirJLaIMOQGpQdrXw==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b3081fbf8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-17mnjj3.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (1.1ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '3'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '4'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('4', 'jasmith@gmail.com', '331234567', '22123456', 'Jane', 'Smith', '20 John Smith', '2020-02-27 00:33:03', '2020-02-27 00:33:03')[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 57ms (ActiveRecord: 18.4ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:33:04 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 01:33:42 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sv8E1qHIMEcHlcF5BBwa2Gdo+mPeOH7ClWwzbHWwKgJ3tPuAAEEgyO9arviQ7oRYIkmADCJgMcjdvZNZToS6cg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b342eafa8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-1qpu8k1.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '3'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `people` SET `address` = '20 Smith', `updated_at` = '2020-02-27 00:33:42' WHERE `people`.`id` = 3[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (1.1ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '4'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE `people` SET `mobile_phone_number` = '22123457', `address` = '20 Smith', `updated_at` = '2020-02-27 00:33:42' WHERE `people`.`id` = 4[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 52ms (ActiveRecord: 26.9ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 01:33:42 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 01:36:00 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vDURs4HkefV4/sJbfgCENeF/6z80Y3Bzwc6NnA+A7Rd0swepecSOm90UzSjyclWLaL8TR23YC1WaeZq3dYzHxA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b48267338 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-oe4g9e.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:36:00', '2020-02-27 00:36:00')[0m
+  [1m[35m (20.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:36:00', '2020-02-27 00:36:00')[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 123ms (ActiveRecord: 86.5ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 01:36:00 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 106ms (Views: 103.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 01:37:23 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AiKcuPaqgz8sJJST57Wb1z/f4U2XiwWaLWW3F2X8WHfKpIqiDop0UYnOm+Brx0ppth8ZNc4wfrx20qA8H/BypA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b38d789a8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-1vdbzt5.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:37:23', '2020-02-27 00:37:23')[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:37:23', '2020-02-27 00:37:23')[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('3', '30 Rue Marine', '75019', 'Paris', 'France', 'Marie Dupont', '2020-02-27 00:37:23', '2020-02-27 00:37:23')[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 80ms (ActiveRecord: 57.6ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 01:37:23 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 01:38:19 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OB2XShtSy1tuZhQdcqxmnxxIVwzaK+VeGyV+NMmLodHwm4FQ43I8NcuMG27+3rchlYivdIOQnnhAkmkfs4eLAg==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b396e3ab0 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-1k9fnt9.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:38:19', '2020-02-27 00:38:19')[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:38:19', '2020-02-27 00:38:19')[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('3', '30 Rue Marine', '75019', 'Paris', 'France', 'Marie Dupont', '2020-02-27 00:38:19', '2020-02-27 00:38:19')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 53ms (ActiveRecord: 34.6ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 01:38:19 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 01:38:31 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"faH8sBxidDEL2wHZK7F2Z3WUAVtRWsjEiPFNTcm1lR61J+qq5EKDX64xDqqnw6fZ/FT5Iwjhs+LTRlpms7m/zQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b39a42e90 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-xesu6c.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:38:31', '2020-02-27 00:38:31')[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:38:31', '2020-02-27 00:38:31')[0m
+  [1m[35m (20.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('3', '30 Rue Marine', '75019', 'Paris', 'France', 'Marie Dupont', '2020-02-27 00:38:31', '2020-02-27 00:38:31')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 62ms (ActiveRecord: 34.3ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 01:38:31 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 01:39:16 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ijCSWd45lTXbrpd1E2jbqye8Jb2iXiI7ydc4jH1TD8artRTn1gROnKEtS5YP3LQJV4I7q8yA660kEvJS/lm7A==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b3c030d78 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-c6l0ic.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[36mBuilding Load (0.8ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '1'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75009', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:39:16', '2020-02-27 00:39:16')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (0.2ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '2'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '40 Rue René Clair', '75018', 'Paris', 'France', 'Martin Faure', '2020-02-27 00:39:16', '2020-02-27 00:39:16')[0m
+  [1m[35m (24.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (0.6ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '3'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('3', '30 Rue Marine', '75019', 'Paris', 'France', 'Marie Dupont', '2020-02-27 00:39:16', '2020-02-27 00:39:16')[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 98ms (ActiveRecord: 78.4ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 01:39:16 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 01:39:55 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5gigGL5EyOZ6ypNcv00N5DV1AgLuF/sLtKmW+/tQAhYujrYCRmQ/iN8gnC8zP9xavLX6eresgC3vHoHQgVwoxQ==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f1b39a74d28 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-8157-prigzm.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[36mBuilding Load (2.5ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '1'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE `buildings` SET `zip_code` = '75001', `updated_at` = '2020-02-27 00:39:55' WHERE `buildings`.`id` = 1[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (1.1ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '2'[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE `buildings` SET `address` = '20 Rue René Clair', `zip_code` = '75002', `updated_at` = '2020-02-27 00:39:55' WHERE `buildings`.`id` = 2[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (0.8ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '3'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE `buildings` SET `zip_code` = '75003', `updated_at` = '2020-02-27 00:39:55' WHERE `buildings`.`id` = 3[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 86ms (ActiveRecord: 55.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 01:39:55 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 58ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 01:49:09 +0100
+  [1m[35m (7.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bG0G/XHkyYcU1NO+vQCO9OqXjux6tm3o/Ct32k/5ppOk6xDnicQ+6bE+3M0xcl9KY1d2lCMNFs6nnGDxNfWMQA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f0384983c60 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-11513-dbr6cq.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[36mBuilding Load (0.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '1'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (0.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '2'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (0.2ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '3'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 95ms (ActiveRecord: 59.5ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 01:49:10 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 328ms (Views: 326.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:48:51 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 65ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:48:52 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6UfJ/RadX92eQNMMrFP/VZ/UMCN59Dm5EAZ5wxWHRNumAccOdoMiU8235vbB/UXf+i6G8UuJMm3cZkQe/hf+Tg==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:48:52 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:49:15 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bNlvdpmf+dOxQZ7ga6emI6KbkyITbNr5ZDBsYROBcBSpkpAgOBbpXFmO8WH/VTij57rpTe80lfMs4cxUKLXgZA==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:49:15 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:49:17 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VAVwaRLPkVYlz1HVgLJj6m0sRuPdRTNYGVtIXvQqf8qRTo8/s0aB2c0APlQUQP1qKA08jCEdfFJRiuhrzx7vug==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:49:17 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:49:19 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:49:21 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AW0vmonw0JCatwAtHRdg/WyyLJIaJKWvThl7WVogv8BOKyFp6e6tHslANddwudp3CUiaQChZrnuCeUaEsbAFVQ==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:49:21 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:50:35 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DayqVfT9Yqrhqqecyj2NMN2GTmIW+dOIlA6kBIcaJajI51UDVXRyJQllyB1ezxOwmKc0DeqhnILc3wQxvC612A==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:50:35 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:50:37 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V0/EqCQQJBRSZdQo0qv6USEVisnua6oGs4OjfqLjZv+SBDv+hZk0m7qqu6lGWWTRZDTwphIz5Qz7UgNLmdf2jw==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:50:37 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:50:38 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:50:40 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z7f7t0ecKMUkZ6CWg5Xe/bu0t1RNCyWl4aJAshd1dVaA8fVEJ4JVS3eQlWzuO2R33k4Bhn92LnEtwn1v/OXPww==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:50:40 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:51:26 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:51:28 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"92qvOwZRX6TLbh9slYonQa+TwyPJVx1TT0CQn15QMG24LKHIZk8iKpiZKpb4JJ3Lyml18fsqFoeDIK1CtcCK+A==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:51:28 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 61ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:54:10 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T7KjqjKTQQNSxy+PqgS6d1NbA0e2yNDhknB2TDP+n3KK+Vz8kxpRjLoIQA4+9iT3Fnp5KEqQn+vaodZ5CMoPAg==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:54:10 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 106ms (Views: 103.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:54:20 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SCY88FUVeJNsiRuE0BZFhbSGQGM5rW2XyQQAa9JPEmSNbcOm9JxoHIRGdAVE5NsF8ac6DMX1Ip2B1aBe6XuCFA==", "fichier_csv"=>#<ActionDispatch::Http::UploadedFile:0x00007f037814cb48 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-11513-gl4eeg.rb>, @original_filename="test_helper.rb", @content_type="application/x-ruby", @headers="Content-Disposition: form-data; name=\"fichier_csv\"; filename=\"test_helper.rb\"\r\nContent-Type: application/x-ruby\r\n">, "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:54:20 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:58:29 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:58:38 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5kP1ya0Q0Ff/QEjZ+uXqfAogHOH4b8d0MEf/9gADRtypBfs6zQ6t2ay3fSOXS1D2b9qqM8oSzKD8J8Ir65P8SQ==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f0385263a60 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-11513-b27kjz.rb>, @original_filename="test_helper.rb", @content_type="application/x-ruby", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"test_helper.rb\"\r\nContent-Type: application/x-ruby\r\n">, "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:58:39 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 02:58:44 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"le+7u42XDAoT47RML1qTPDdywjMkeU18WWqsefnPQ4xQpETtLB4chfss2827qA28clO4XNghAnYRuwxMwvvT/A==", "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 02:58:44 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 45ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 02:58:48 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 02:59:06 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3PoYiYuRyG8B6htl9HK7prCaVg8sK50cNoUkxa+VsXiTvBZ664+14VIdLp+Z3AEs1WDg3R5Wlsj65RkYRAUL7Q==", "commit"=>"Submit"}
+Upload Building
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 02:59:06 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 02:59:19 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEdAYzg1Q4Axo1ojfQR2i5hHoLZNYx2bh8SvM+MAqF5EwVZ5wBW07pRJVVDxdqc1EYdYzhTYZr3cc7gYmQyCjQ==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f03780e8918 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-11513-16lm2no.rb>, @original_filename="test_helper.rb", @content_type="application/x-ruby", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"test_helper.rb\"\r\nContent-Type: application/x-ruby\r\n">, "commit"=>"Submit"}
+Upload Building
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 02:59:20 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 02:59:42 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H7AK4Fq0oRnhvWApWBiq2bPo6izg+QlyPJzgqUujhJHXNhz6opRWd0RXb1rUantnOigSVLlCclRnK/eCMa+uQg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f03701c8430 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-11513-rd6ji0.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[36mBuilding Load (2.1ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '1'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75001', 'Paris', 'France', 'Martin Faure', '2020-02-27 01:59:42', '2020-02-27 01:59:42')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (1.1ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '2'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '20 Rue René Clair', '75002', 'Paris', 'France', 'Martin Faure', '2020-02-27 01:59:42', '2020-02-27 01:59:42')[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (0.8ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '3'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('3', '30 Rue Marine', '75003', 'Paris', 'France', 'Marie Dupont', '2020-02-27 01:59:42', '2020-02-27 01:59:42')[0m
+  [1m[35m (25.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 221ms (ActiveRecord: 174.4ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 02:59:42 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 51ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 02:59:54 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z0zQOR3nce6seG6a7jGXguXYaDTcJXhEVKKHHtEeGJcHysYj5ceGgAmSYeliQ0Y8bBiQTIWeA2IPFZA1qxIyRA==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f0385d71358 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-11513-1dr6iap.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[36mBuilding Load (2.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '1'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (1.7ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '2'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (2.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '3'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 33ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 02:59:54 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 03:00:03 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZAp/zq4KN0MVIBM1BAltPPquHXbMl+MyCrrQ7RX7QU2hQYCYD4MnzP3vfLSQ+/O8v49nGTDPrDhCa3DYLs/RPQ==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f03701e9ce8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-11513-tl18pa.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '3'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '4'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 105ms (ActiveRecord: 84.6ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 03:00:03 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 03:01:21 +0100
+  [1m[35m (7.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oygRDI+O0umqPH/eOYWct8ZkBCy/n5p72UuQLCI7gMZmY+5aLgfCZkLzEF+tdwI3g0V+Q0PH1XGRmjAZGQ8Qtg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x0000559653841d10 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-15310-1e4pwhx.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 03:01:22 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 179ms (Views: 178.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 03:01:36 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"owpRvERZUrkyDb7blYX5YGGSraN9B0YitRsIw1ExrZNmQa7q5dBCNtrC0VoBd2fgJLPXzIFfCSj9yqj2agU94w==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f634c088480 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-15310-kmw9vf.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-27 02:01:37', '2020-02-27 02:01:37')[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-27 02:01:37', '2020-02-27 02:01:37')[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '3'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('3', 'jsmith@gmail.com', '331234567', '22123456', 'John', 'Smith', '20 Smith', '2020-02-27 02:01:37', '2020-02-27 02:01:37')[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '4'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('4', 'jasmith@gmail.com', '331234567', '22123457', 'Jane', 'Smith', '20 Smith', '2020-02-27 02:01:37', '2020-02-27 02:01:37')[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 267ms (ActiveRecord: 174.4ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 03:01:37 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 03:01:43 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C4LFIbGype4AiKOwrQCNqwi+Lt46R/7xzXRJwEgm30TDBNM7SZJSgKVirMMhclwVgX7WpmP8hdeWw17rMir1lw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f63454b1ce8 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-15310-1jhn1t.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[36mBuilding Load (4.4ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '1'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75001', 'Paris', 'France', 'Martin Faure', '2020-02-27 02:01:43', '2020-02-27 02:01:43')[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (0.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '2'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '20 Rue René Clair', '75002', 'Paris', 'France', 'Martin Faure', '2020-02-27 02:01:43', '2020-02-27 02:01:43')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBuilding Load (1.1ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '3'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('3', '30 Rue Marine', '75003', 'Paris', 'France', 'Marie Dupont', '2020-02-27 02:01:43', '2020-02-27 02:01:43')[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 189ms (ActiveRecord: 163.7ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 03:01:43 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 03:05:03 +0100
+  [1m[35m (5.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LGK9bls2BCpq11MR8W5Hyd8AgPUHSSUxunrMxDrBspjk5Kt0oxbzRM89XGJ9HJZ3VsB4jV7yXhfhzdvvQM2YSw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00005634f61aa668 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-15461-we0kig.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 42ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 03:05:03 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 165ms (Views: 163.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 03:06:42 +0100
+  [1m[35m (4.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 223ms (Views: 212.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_building" for ::1 at 2020-02-27 03:06:50 +0100
+Processing by BuildingController#upload_building as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vsVGzGOoF4tT2aDmLv74EqatkdFwYulRZAY2JYvxMCDxg0g/A7ZqBQAulRxDUEKYw1cnA0If4oWoZgv4YGGKtQ==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffb3c06f3d0 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-15631-avfe3l.csv>, @original_filename="buildings.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"buildings.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload Building
+  [1m[35m (7.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBuilding Load (10.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '1'[0m
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('1', '10 Rue La bruyère', '75001', 'Paris', 'France', 'Martin Faure', '2020-02-27 02:06:50', '2020-02-27 02:06:50')[0m
+  [1m[36mBuilding Load (0.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '2'[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('2', '20 Rue René Clair', '75002', 'Paris', 'France', 'Martin Faure', '2020-02-27 02:06:50', '2020-02-27 02:06:50')[0m
+  [1m[36mBuilding Load (0.3ms)[0m  [1m[34mSELECT `buildings`.* FROM `buildings` WHERE `buildings`.`reference` = '3'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `buildings` (`reference`, `address`, `zip_code`, `city`, `country`, `manager_name`, `created_at`, `updated_at`) VALUES ('3', '30 Rue Marine', '75003', 'Paris', 'France', 'Marie Dupont', '2020-02-27 02:06:50', '2020-02-27 02:06:50')[0m
+  [1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/building/new
+End uploading building.
+Completed 200 OK in 336ms (ActiveRecord: 181.4ms)
+
+
+Started GET "/building/new" for ::1 at 2020-02-27 03:06:50 +0100
+Processing by BuildingController#new as HTML
+  Rendering building/new.html.erb within layouts/application
+  Rendered building/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/upload_people" for ::1 at 2020-02-27 03:07:24 +0100
+Processing by PersonController#upload_people as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UbroGKcN577lUojORYtCr/J22zZuC97TjjsCuB8uWaGU8RdOBoT3MQ2d50/Redwvt1ehWZJTkdnG6qKNJBrJ0Q==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffb4942e450 @tempfile=#<Tempfile:/tmp/RackMultipart20200227-15631-c5mgec.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload People
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPerson Load (5.7ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '1'[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('1', 'h.dupont@gmail.com', '0123456789', '0623456789', 'Henri', 'Dupont', '10 Rue La bruyère', '2020-02-27 02:07:24', '2020-02-27 02:07:24')[0m
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '2'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('2', 'jdurand@gmail.com', '0123336789', '0663456789', 'Jean', 'Durand', '40 Rue René Clair', '2020-02-27 02:07:24', '2020-02-27 02:07:24')[0m
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '3'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('3', 'jsmith@gmail.com', '331234567', '22123456', 'John', 'Smith', '20 Smith', '2020-02-27 02:07:24', '2020-02-27 02:07:24')[0m
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT `people`.* FROM `people` WHERE `people`.`reference` = '4'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `people` (`reference`, `email`, `home_phone_number`, `mobile_phone_number`, `firstname`, `lastname`, `address`, `created_at`, `updated_at`) VALUES ('4', 'jasmith@gmail.com', '331234567', '22123457', 'Jane', 'Smith', '20 Smith', '2020-02-27 02:07:24', '2020-02-27 02:07:24')[0m
+  [1m[35m (28.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/person/new
+End uploading people.
+Completed 200 OK in 128ms (ActiveRecord: 87.7ms)
+
+
+Started GET "/person/new" for ::1 at 2020-02-27 03:07:24 +0100
+Processing by PersonController#new as HTML
+  Rendering person/new.html.erb within layouts/application
+  Rendered person/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 95ms (Views: 88.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-29 03:35:15 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/tanime/.rvm/gems/ruby-2.6.3/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/tanime/.rvm/gems/ruby-2.6.3/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 252ms (Views: 9.1ms)
+
+
+Started GET "/new" for ::1 at 2020-02-29 03:35:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/user/new" for ::1 at 2020-02-29 03:35:25 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 497ms (Views: 491.8ms)
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 03:35:59 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 31.2ms)
+
+
+Started POST "/create" for ::1 at 2020-02-29 03:36:16 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GDYTBUfEHZRExIjwILqxmTS5q0rZUqNMTkRkzuhUqcIllZVCS6uXVYSB571SkKfeAxT7vfwivck7h8UYaKQscw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f0124ee1c00 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-25644-1v8mwwp.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Upload User Error :  uninitialized constant User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 59ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 03:36:16 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 31ms (Views: 30.4ms)
+
+
+Started POST "/create" for ::1 at 2020-02-29 03:37:14 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qydHO+BF4ddKLug+H1TazhIawqMevGdsziNkgByhvyftBcmnQmSEE4kdIF2p/2W9tapfyVbjv4WH6NhHuH+FCw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f0128073cf0 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-25644-ogtvda.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Completed 500 Internal Server Error in 12ms
+
+
+  
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00007f0128073cf0>):
+  
+app/services/upload.rb:8:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started GET "/user/new" for ::1 at 2020-02-29 03:38:41 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 448ms (Views: 218.1ms)
+
+
+Started POST "/create" for ::1 at 2020-02-29 03:38:47 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+hTAJ5La8F5r6l9sFiX7NdrldoboFzdmO8pAqYaOlRfHt0ZgnrV6n6uvMCFkD+1y7Ugmcc1nKeNOCeF/Bn4Qpg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007efc7894c7c8 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-26638-1yiu96b.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Completed 500 Internal Server Error in 48ms
+
+
+  
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00007efc7894c7c8>):
+  
+app/services/upload.rb:11:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started GET "/user/new" for ::1 at 2020-02-29 03:39:59 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 52ms (Views: 48.1ms)
+
+
+Started POST "/create" for ::1 at 2020-02-29 03:40:04 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TnLi50Z8rkH1MONY+2PPWX+ZCfbM97uc9X8hzwZnC0Fz0WSgShMkgDV1jBWJSdkeSDRZAemHpRmAvIAZhpeO8A==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007efc7935b458 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-26638-rx9vab.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+  [1m[35m (24.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 25.6ms)
+
+
+  
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00007efc7935b458>):
+  
+app/services/upload.rb:21:in `block in import_data'
+app/services/upload.rb:19:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started GET "/user/new" for ::1 at 2020-02-29 03:40:32 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/create" for ::1 at 2020-02-29 03:40:36 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fffuI9XFCrZ5AIBijme7PXgKqwQstH5f21bkBVNNGLZAVGhk2aqAd7lF7y/8Ta16T6f78wnEYNqulUXT072dBw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007efc78bd1ef8 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-26638-1xddt8b.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00007efc78bd1ef8>):
+  
+app/services/upload.rb:19:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started POST "/create" for ::1 at 2020-02-29 03:41:37 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fffuI9XFCrZ5AIBijme7PXgKqwQstH5f21bkBVNNGLZAVGhk2aqAd7lF7y/8Ta16T6f78wnEYNqulUXT072dBw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007efc8c0fcb40 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-26638-1ht575n.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00007efc8c0fcb40>):
+  
+app/services/upload.rb:8:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started POST "/create" for ::1 at 2020-02-29 03:42:38 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fffuI9XFCrZ5AIBijme7PXgKqwQstH5f21bkBVNNGLZAVGhk2aqAd7lF7y/8Ta16T6f78wnEYNqulUXT072dBw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x000055660a6b6280 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-26874-1rmf7g6.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 144ms
+
+
+  
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x000055660a6b6280>):
+  
+app/services/upload.rb:8:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started POST "/create" for ::1 at 2020-02-29 03:43:20 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fffuI9XFCrZ5AIBijme7PXgKqwQstH5f21bkBVNNGLZAVGhk2aqAd7lF7y/8Ta16T6f78wnEYNqulUXT072dBw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ff600015df8 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-26874-via6uh.csv>, @original_filename="people.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"people.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 6ms
+
+
+  
+NoMethodError (undefined method `[]' for #<ActionDispatch::Http::UploadedFile:0x00007ff600015df8>):
+  
+app/services/upload.rb:8:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started POST "/create" for ::1 at 2020-02-29 03:46:20 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fffuI9XFCrZ5AIBijme7PXgKqwQstH5f21bkBVNNGLZAVGhk2aqAd7lF7y/8Ta16T6f78wnEYNqulUXT072dBw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x0000555949abd4f0 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-27273-fqmf7t.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 144ms
+
+
+  
+TypeError (no implicit conversion of ActionDispatch::Http::UploadedFile into String):
+  
+app/services/upload.rb:18:in `import_data'
+app/controllers/user_controller.rb:15:in `create'
+Started GET "/user/new" for ::1 at 2020-02-29 03:48:40 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 417ms (Views: 277.2ms)
+
+
+Started POST "/create" for ::1 at 2020-02-29 03:48:44 +0100
+Processing by UserController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TUc0jq2Bs462nI0ALYWOoFYjJwwSygJFdaLzY8Y1/7Bw5LLJoe45T3bZ4k1fr5jnYY53+ze6HMAAYVK1RsV6AQ==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f5605443470 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-27444-1x3vgkb.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 52ms
+
+
+  
+TypeError (no implicit conversion of ActionDispatch::Http::UploadedFile into String):
+  
+app/services/upload.rb:18:in `import_data'
+app/controllers/user_controller.rb:16:in `create'
+Started GET "/user/new" for ::1 at 2020-02-29 03:57:10 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 411ms (Views: 252.9ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 03:57:15 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z1I/RxAdnuJ74DBMclxrEZ2BvY/hUPWMdYaTqq8/3A3y8bkAHHIUI7ulXwEAdn1WqizteMQg6wkARTJ8L89ZvA==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15f1550538 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-v3jb71.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User Error :  undefined method `split' for #<CSV::Row "email":"alain.dieckhoff@entreprisea.fr">
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 77ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 03:57:15 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 60ms (Views: 58.0ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 03:59:49 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w3rXcGjcpYBpkCW0MBqq/yCkf/kDgbmmbIRsn48vSaWUg3BupNl8gsKPg6aWxcbYr6RX/VfvH//O53QjozNxSg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15f0f70fa0 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-1n8521e.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Upload User Error :  undefined method `split' for {"email"=>"alain.dieckhoff@entreprisea.fr"}:Hash
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 6ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 03:59:49 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 64ms (Views: 63.1ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:00:16 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6cknsqt5H4sNaXCLSqRXNL06Ucmcpwr95wweA7OzE6++MICsZ3zGiaZ21pnsezsTMjp5zcjJrKRFbwa/n68rQA==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15f17c3e28 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-glxbxl.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 11ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:00:17 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 39ms (Views: 36.0ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:09:54 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kW2/dSRXybkKUchkZQhGpdTfO8Ck0CV8N4t93ikT3ZXGlBhr6FIQu6FObnbD1yqCW98TxPC+gyWV6GViBQ/leg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15ec077ae8 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-1jqmkax.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 8ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:09:54 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 46ms (Views: 45.1ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:10:33 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"exb6OhK1iHkrNxfTGhzB+SfyWYgm6OtHzKj/PCmINj0s710k3rBRe4AoscG8w63eqPJxjHKGTR5uy+eABZQO0g==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15f40727e8 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-gyf00.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 15ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:10:33 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 53ms (Views: 49.6ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:11:41 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yHDtYZArQiah6aNAkbg30bUcQkNXJPy9oT43jf7MFJmfiUp/XC6bJAr2BVI3Z1v2OhxqRwNKWuQDXS8x0tAsdg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15e821a2f0 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-1bn1j2p.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 12ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:11:42 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 63ms (Views: 58.6ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:12:20 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+rebYEraaqwNN0g2O7VTaD09EQjBlF7cp1+1QNyCznWtTjx+ht+zrqYo7iSdaj9Psj05DJX6+IUFPK388J72mg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15f07c2920 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-lkdkrp.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 14ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:12:20 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 43ms (Views: 40.6ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:12:55 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F/TuZBAqiMHMMmcHgmuz6dQZU0fSSi3Pla9QnM+zWXBADUl63C9Rw2ctwRUktN/OWxl7Q4Yki5Y3zEgg469hnw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f15f15ff560 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-28022-1dd5bbd.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 11ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:12:55 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 64ms (Views: 60.0ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:16:02 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zIdoxS4+CXB+EW9OpAc3uVVV/cjU7CEY0iRha+Gj2EGbfs/b4jvQctUOyVwC2Fue2lXVzICCh0FwR3nXzb/grg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x000056423a1ffd60 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-29186-guaces.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 180ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:16:02 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 181ms (Views: 179.9ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:20:41 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NvQZRKAob/PCzbeZfH77Pmvcm7X4L30UrHvVKRaYSjNhDb5abC228WnSEYvaoZcZ5NyzsaxB200OGM2VOoRy3A==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f20b006c818 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-29186-24muc5.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 5ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:20:41 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 36.2ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:23:35 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVjCQomx8KClIF6vPovzZmztV7+bssFjqBU/x4wAMYnmoWVcRbQpog4/+L2YVJ9B4+1/u8/cZzoKdid7oBwJZg==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f20c0077ed8 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-29186-ousd2g.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 7ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:23:35 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 32.1ms)
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:29:13 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 428ms (Views: 249.8ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:29:21 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1utciJPzn7Ocr3J+ge71S2C0uxa2R1lvMhYz+YAi7PXrSNrPn5wVclzqHTPzxOMMVxnr4ZM3R+pH1ZIvANJpRA==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f8730663528 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-30210-w8dofc.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 23ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:29:21 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 33.4ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:31:05 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hYqH4WChAIo8Ggyfd+xSPnKSNYR0hs6VrW0QeXxivizScyD/rKTZiJcFqo3RMz4Z/ZIdgCDoaMwPDgjFUH6Gww==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f8731851168 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-30210-37mhy1.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 5ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:31:05 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 31ms (Views: 30.0ms)
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:36:39 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 374ms (Views: 211.0ms)
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:37:22 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 422ms (Views: 236.4ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:37:34 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OT44ItBi2FJZvwopgxY6l/jLsZL3wKs10Wd/RoSjFXAkCYV5lOsKAQbhcmeRDV/U4xED+UF6ra/toGIn/JKUJw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fb0dcaa84f0 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-30653-42eed5.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 33ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:37:34 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 32.9ms)
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:38:38 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 438ms (Views: 252.6ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-02-29 04:38:43 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uwPrGQpQROyQrdzuuITANyFKMH0HMsnRTqWOLZLEznOmNFZCTtmWv8/zpKCqn6V0OpCCFrGIz0tyYpNM6vVPJA==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f28c4716dc8 @tempfile=#<Tempfile:/tmp/RackMultipart20200229-30754-1nh4ddu.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload User
+Redirected to http://localhost:3000/user/new
+End uploading user.
+Completed 200 OK in 24ms
+
+
+Started GET "/user/new" for ::1 at 2020-02-29 04:38:43 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 29.8ms)
+
+
+Started GET "/person/new" for ::1 at 2020-03-01 07:07:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/person/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/user/new" for ::1 at 2020-03-01 07:07:46 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 398ms (Views: 255.5ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-03-01 07:07:51 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b9+XDxskYcsRyMq6gNjEIDc80G2Pl6eVSc8n2llX4PRy6CpUX62zmE6WsvSSw6FjLOZiBjktoQ91CDq7IWZhow==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007feb18feab18 @tempfile=#<Tempfile:/tmp/RackMultipart20200301-782-15rzmob.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload email csv file.
+Redirected to http://localhost:3000/user/new
+End uploading email csv file.
+Completed 200 OK in 22ms
+
+
+Started GET "/user/new" for ::1 at 2020-03-01 07:07:51 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 37ms (Views: 34.7ms)
+
+
+Started GET "/user/new" for ::1 at 2020-03-01 07:08:06 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 389ms (Views: 200.9ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-03-01 07:08:13 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bwcLzf/6yxw0LCIK7NDTRUvk9L2b+gm4d9CHVaVlLhxyMLaWu3MZT2tyWkT+y7YGUD5G1i1ADyJLF5o03VSvSw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f0c80071bb8 @tempfile=#<Tempfile:/tmp/RackMultipart20200301-1028-11bwr72.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload email csv file.
+Redirected to http://localhost:3000/user/new
+End uploading email csv file.
+Completed 200 OK in 22ms
+
+
+Started GET "/user/new" for ::1 at 2020-03-01 07:08:13 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 23.6ms)
+
+
+Started GET "/user/new" for ::1 at 2020-03-01 08:52:55 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 567ms (Views: 304.8ms)
+
+
+Started POST "/upload_file" for ::1 at 2020-03-01 08:53:01 +0100
+Processing by UserController#upload_file as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gTrmP62FkX/v2emNfRHJ5Dzn07G9lHgYHIkDKBtvCwZfTixLm7RSABa2m0XQ0FpMoYBTcoJA1B0U7xvWZRtrMw==", "csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f2774f56f20 @tempfile=#<Tempfile:/tmp/RackMultipart20200301-8952-1fa7e73.csv>, @original_filename="input.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"csv_file\"; filename=\"input.csv\"\r\nContent-Type: text/csv\r\n">, "commit"=>"Submit"}
+Upload email csv file.
+Redirected to http://localhost:3000/user/new
+End uploading email csv file.
+Completed 200 OK in 21ms
+
+
+Started GET "/user/new" for ::1 at 2020-03-01 08:53:01 +0100
+Processing by UserController#new as HTML
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 28.6ms)
+
+
